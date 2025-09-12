@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: raleway;
+  src: url('assets/Raleway-Regular.ttf');
+}
+
+body{
+  font-family: raleway;
+  min-height: 100vh;
+  padding-bottom:50px;
+}
