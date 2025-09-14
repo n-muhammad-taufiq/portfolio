@@ -8,7 +8,7 @@ const Projects = () => {
       
       <div className='flex flex-col items-start gap-y-5'>
         <p className='text-2xl max-lg:text-xl font-bold '>Cerfira - a Social Media Platform</p>
-        <a href="http://www.cerfira.com" target='_blank' className='bg-blue-400 text-white px-4 py-2 rounded-full font-bold text-sm'>View Project</a>
+        <a href="https://www.cerfira.com" target='_blank' rel='noopener noreferrer' className='bg-blue-400 text-white px-4 py-2 rounded-full font-bold text-sm'>View Project</a>
         <div className='rounded-md w-full grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-5'>
             <img className='rounded-md  border-2 border-cyan-600 object-cover  h-full w-full col-span-full' src="/project-images/cerfira/Screenshot-1.png" alt="" />
             <img className='rounded-md  border-2 border-cyan-600 object-cover h-full w-full ' src="/project-images/cerfira/Screenshot-2.png" alt="" />
