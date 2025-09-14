@@ -2,7 +2,7 @@
 
 @font-face{
   font-family: 'montserrat';
-  src:url('assets/Montserrat-VariableFont_wght.ttf')
+  src:url('/public/fonts/Montserrat-VariableFont_wght.ttf')
 }
 
 @keyframes fadeIn {
