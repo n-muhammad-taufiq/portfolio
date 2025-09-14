@@ -9,7 +9,7 @@ const Projects = () => {
       <div className='flex flex-col items-start gap-y-5'>
         <p className='text-2xl max-lg:text-xl font-bold '>Cerfira - a Social Media Platform</p>
         <div className='rounded-md w-full grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-5'>
-            <img className='rounded-md  border-2 border-cyan-600 object-cover  h-full w-full col-span-full' src="./src/assets/cerfira/Screenshot-1.png" alt="" />
+            <img className='rounded-md  border-2 border-cyan-600 object-cover  h-full w-full col-span-full' src="/project-images/cerfira/Screenshot-1.png" alt="" />
             <img className='rounded-md  border-2 border-cyan-600 object-cover h-full w-full ' src="/project-images/cerfira/Screenshot-2.png" alt="" />
             <img className='rounded-md  border-2 border-cyan-600 object-cover h-full w-full' src="/project-images/cerfira/Screenshot-3.png" alt="" />
             <img className='rounded-md border-2 border-cyan-600 object-cover h-full w-full' src="/project-images/cerfira/Screenshot-4.png" alt="" />
