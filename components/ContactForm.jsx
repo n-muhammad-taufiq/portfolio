@@ -1,31 +1,44 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm,ValidationError } from '@formspree/react'
+import Loading from './Loading';
 
 const ContactForm = () => {
 
-    const [state,handleSubmit]=useForm('xnnbreay')
+    const [state,handleSubmit,reset]=useForm('xnnbreay')
+
+    useEffect(()=>{
+        if(state.succeeded){
+            setTimeout(()=>{
+                reset();
+            },2000)
+        }
+    },[state])
 
     if(state.succeeded){
-        return  <p className=''>Thank you for contacting!</p>
+        return  <p className='font-bold animate-fadeIn'>Thank you for contacting!</p>
     }
 
     
   return (
-    <form onSubmit={handleSubmit} className='flex flex-col items-start gap-y-5 text-sm'>
+    <>
+    <form onSubmit={handleSubmit} className='flex flex-col items-start gap-y-5 text-sm animate-fadeIn'>
         <label className='text-white font-normal' htmlFor="name">Name</label>
-        <input placeholder='Name' className='bg-white rounded-md px-5 py-3 text-gray-800 outline-none w-80 max-lg:w-70 max-md:w-60 ' type="text" name="name" id="name" />
+        <input required placeholder='Name' className='bg-white rounded-md px-5 py-3 text-gray-800 outline-none w-80 max-lg:w-70 max-md:w-60 ' type="text" name="name" id="name" />
         <label className='text-white font-normal' htmlFor="email">Email</label>
-        <input placeholder='Email' className='bg-white rounded-md px-5 py-3 text-gray-800 outline-none w-80 max-lg:w-70 max-md:w-60 ' type="email" name="email" id="email" />
-        <ValidationError prefix='Email' field='email' errors={state.errors}></ValidationError>
+        <input required placeholder='Email' className='bg-white rounded-md px-5 py-3 text-gray-800 outline-none w-80 max-lg:w-70 max-md:w-60 ' type="email" name="email" id="email" />
+        <ValidationError prefix='The Input' field='email' errors={state.errors}></ValidationError>
         <label className='text-white font-normal' htmlFor="phone-number">Phone Number</label>
         <input placeholder='Phone Number (Optional)' className='bg-white rounded-md px-5 py-3 text-gray-800 outline-none w-80 max-lg:w-70 max-md:w-60 ' name="phone-number" id="phone-number" />
         <label className='text-white font-normal' htmlFor="message">Your Message</label>
-        <textarea className='bg-white rounded-md px-5 py-3 text-gray-800 outline-none resize-none h-70 w-80 max-lg:w-70 max-md:w-60' placeholder='message' name="message" id="message"></textarea>
+        <textarea required className='bg-white rounded-md px-5 py-3 text-gray-800 outline-none resize-none h-70 w-80 max-lg:w-70 max-md:w-60' placeholder='message' name="message" id="message"></textarea>
         <ValidationError prefix='Message' field='message' errors={state.errors}></ValidationError>
-
         <button type='submit' disabled={state.submitting} className='bg-blue-400 w-fit text-white px-4 py-2 rounded-full self-center cursor-pointer'>Send</button>
-
     </form>
+
+    {state.submitting &&
+    <Loading></Loading>
+    }
+    </>
   )
 }
 

@@ -1,46 +1,17 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'raleway';
-  src: url('assets/Raleway-Regular.ttf');
-}
-
-@font-face {
-  font-family: 'inter';
-  src: url('assets/Inter_18pt-Regular.ttf');
-}
-
-@font-face{
-  font-family: 'archivo';
-  src:url('assets/ArchivoBlack-Regular.ttf')
-}
-
 @font-face{
   font-family: 'montserrat';
   src:url('assets/Montserrat-VariableFont_wght.ttf')
 }
 
-@keyframes moveDot {
-  0%{
-    left:0;
-    top:-1;
-  }
-  25%{
-    right:0;
-    top:-1;
-  }
-  50%{
-    right:0;
-    bottom:-1;
-  }
-  75%{
-    left:0;
-    bottom:-1;
-  }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 body{
-  font-family: raleway;
+  font-family: montserrat;
   min-height: 100vh;
   padding-bottom:50px;
   background-color: black;
@@ -52,12 +23,9 @@ body{
 .montserrat{
     font-family: montserrat;
 }
-.heading{
-  font-family:archivo;
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in forwards;
 }
 
-.move-dot{
-  animation-name: moveDot;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
+
