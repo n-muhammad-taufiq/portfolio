@@ -8,7 +8,7 @@ import Introduction from '../components/Introduction';
 function App() {
 
 return (
-    <div className='flex w-full flex-col px-5 pt-20 gap-y-15 max-md:gap-y-10 montserrat'>
+    <div className='flex w-full flex-col px-5 pt-20 gap-y-15 max-md:gap-y-10 antialiased'>
     <Introduction></Introduction>
     <Skills></Skills>
     <About></About>
